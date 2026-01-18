@@ -5,6 +5,7 @@ import os
 
 app = Flask(__name__)
 # 允许上传的文件格式
+app.config['SECRET_KEY'] = os.urandom(24)  # 生成随机密钥，或直接指定固定字符串如 "your-secret-key-123"
 ALLOWED_EXTENSIONS = {'xlsx', 'xls'}
 
 # 检查文件格式是否合法
