@@ -7,3 +7,5 @@ wheel>=0.42.0
 flask>=2.3.3
 requests>=2.31.0
 # ... 其他依赖
+openpyxl>=3.1.2
+xlrd>=2.0.1
