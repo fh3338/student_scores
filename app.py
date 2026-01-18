@@ -13,8 +13,8 @@ def allowed_file(filename):
 
 # 成绩分析核心函数（适配常见成绩表，可直接改）
 def analyze_scores(file):
-    df = pd.read_excel(file)
     # 提取成绩列（默认取最后一列，可手动指定列名如df['数学']）
+    df = pd.read_excel(file, engine='openpyxl' if file.filename.endswith('.xlsx') else 'xlrd')
     score_col = df.columns[-1]
     scores = df[score_col].dropna()
     
